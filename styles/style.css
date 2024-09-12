@@ -1,71 +1,217 @@
-*{
-    margin: 0;
-    padding: auto;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+/* Estilos Globales */
+body {
+    font-family: 'Roboto Mono', monospace;
 }
-.grid-container {
-    display              : grid;
-    grid-template-columns: 30% auto 30%;
-    gap                  : 10px;
-    background-color     : #2196F3;
-    padding              : 10px;
-}
-header{
-    background-color     : #f1f1f1;
-    border: 2px solid rgb(204, 196, 196);
-}
-nav{
-    background-color     : #740303;
-}
-.grid-container>div {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding         : 20px;
-}
-footer {
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: #f1f1f1;
-    padding: 10px;
+    color: #3c3c3c;
+}
+
+/* Estilos de la Grid */
+.grid-container {
+    background-color: rgb(158, 163, 161);
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    gap: 5px;
+    padding: 5px;
+}
+
+.grid-container > div {
+    padding: 20px;
+}
+
+/* Encabezado y Navegación */
+header {
+    border: 2px solid rgb(150, 166, 166);
+}
+
+h1 {
     text-align: center;
+    font-weight: 900;
+    font-size: 8vh;
 }
 
 .navbar {
-    border-bottom: 0 0 3px solid white;
-    position        : relative;
-    background-color: #f1f1f1;
-    width           : 100%;
-    text-align      : center;
-    padding         : 10px 0;
-    z-index         : 1000;
     border-bottom: 3px solid white;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
     border-bottom-right-radius: 10px;
-    border-bottom-left-radius:10px;
-
+    border-bottom-left-radius: 10px;
 }
 
 .navbar a {
-    color          : rgb(60, 60, 60);
-    padding        : 14px 20px;
+    color: rgb(60, 60, 60);
+    padding: 14px 20px;
     text-decoration: none;
-    display        : inline-block;
+    display: inline-block;
     border-radius: 30px;
 }
 
 .navbar a:hover {
     border: 3px solid white;
-    background-color: #ffffff;
-
 }
-.centrar{
+
+/* Secciones */
+section {
+    margin: 4px;
+}
+
+.inovacion,
+.Aplicacciones-actuales,
+.Uso-Diario {
+    margin: 3em auto;
+}
+
+.inovacion {
+    margin-top: 1vh;
+}
+
+/* Estilos de Imágenes */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.center {
     text-align: center;
 }
 
-.favoritos{
-    margin: 10px auto;
-    text-align: center;
-    box-sizing: border-box;
-}
-img{
-    width: 300px;
-}
-.nombre-drone-favoritos{
+.nombre-drone-favoritos {
     margin-bottom: 10px;
+}
+
+/* Listas */
+ul {
+    margin: 1em 3em;
+}
+
+.li-shop {
+    list-style-type: disc;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+}
+
+.contact-form:hover {
+    width: 91%;
+}
+
+.contact-form label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    background-color: transparent;
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #740303;
+}
+
+.contact-form button {
+    background-color: #740303;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #900404;
+}
+
+/* Estilos para el Pie de Página */
+footer {
+    padding: 10px;
+    background-color: #464545;
+}
+
+.h2-contact {
+    color: #f1f1f1;
+    border-radius: 10px;
+    background-color: #464545;
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 600px) {
+    .contact-form {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 6vh;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding-bottom: 5px;
+    }
+
+    .navbar a {
+        padding: 10px;
+    }
+
+    .center img {
+        max-width: 100%;
+    }
+
+    .grid-container > div {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 5vh;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .navbar a {
+        padding: 8px;
+    }
 }
